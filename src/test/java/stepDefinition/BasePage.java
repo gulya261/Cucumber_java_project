@@ -112,15 +112,18 @@ System.out.println(checkBasketValue);
 
     @Then("User chooses new filter")
     public void userChoosesNewFilter(){
-        WebElement btnNewFilter = driver.findElement(By.xpath("//a[contains(text(),'loh')]"));
+        WebElement btnNewFilter = driver.findElement(By.className("product_sort_container"));
         btnNewFilter.click();
+        WebElement newOptionOfFilter = driver.findElement(By.cssSelector("option[value='lohi']"));
+        newOptionOfFilter.click();
     }
 
     @And("User have new sort page with work of filter")
     public void UserHaveNewSortPageWithWorkOfFilter(){
-        WebElement firstProductPrice = driver.findElement(By.xpath("(//inventory_item_price)[1]"));
+        WebElement firstProductPrice = driver.findElement(By.className("inventory_item_price"));
         String rezult = firstProductPrice.getText();
-        System.out.println(rezult);
+       //System.out.println(rezult);
+        Assert.assertEquals("$7.99",rezult);
 
     }
 }
