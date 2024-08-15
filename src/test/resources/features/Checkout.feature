@@ -1,6 +1,3 @@
-# new feature
-# Tags: optional
-
 Feature: Checkout
 
     Background: User is Logged In

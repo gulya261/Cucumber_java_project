@@ -8,28 +8,29 @@ import pages.CartPage;
 import pages.ProductPage;
 
 
-public class CartSteps  {
+public class CartSteps {
 
     private WebDriver driver;
     private CartPage cartPage;
-    public CartSteps(){
+
+    public CartSteps() {
         this.driver = Hooks.driver;
         this.cartPage = new CartPage(driver);
 
     }
 
     @Then("User is on Cart Page")
-    public void user_is_on_cart_page(){
+    public void user_is_on_cart_page() {
         String currentUrl = Hooks.driver.getCurrentUrl();
-        Assert.assertEquals("https://www.saucedemo.com/cart.html",currentUrl);
+        Assert.assertEquals("https://www.saucedemo.com/cart.html", currentUrl);
     }
 
     @When("User goes to Checkout Page")
-    public void user_goes_to_checkout_page(){
+    public void user_goes_to_checkout_page() {
         cartPage.click_on_checkout_btn();
 
         String currentUrl = Hooks.driver.getCurrentUrl();
-        Assert.assertEquals("https://www.saucedemo.com/checkout-step-one.html",currentUrl);
+        Assert.assertEquals("https://www.saucedemo.com/checkout-step-one.html", currentUrl);
     }
 
 }
