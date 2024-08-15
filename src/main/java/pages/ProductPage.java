@@ -17,11 +17,14 @@ public class ProductPage extends BasePage {
    }
 
     @FindBy(id="add-to-cart")
-            private WebElement addToCartBtn;
+    private WebElement addToCartBtn;
 
 
     @FindBy(className="shopping_cart_badge")
     private WebElement cartBadge;
+
+    @FindBy(className="shopping_cart_link")
+    private WebElement cartBtn;
 
 //    @FindBy(id="remove")
 //    private WebElement removeFromCartBtn;
@@ -162,6 +165,11 @@ public class ProductPage extends BasePage {
     public String getFirstNameItem(){
         return firstItem.getText();
     }
+
+    public void clickOnCart(){
+       this.cartBtn.click();
+    }
+
 
 
 

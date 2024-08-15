@@ -83,8 +83,13 @@ public class ProductSteps {
 
      }
 
-
     }
+     @When("User click on Cart Button")
+     public void user_click_on_cart_btn(){
+         productPage.clickOnCart();
+        }
+
+
 
 
 
